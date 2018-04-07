@@ -1,0 +1,71 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using Microsoft.VisualBasic;
+
+namespace 净现值
+{
+    public partial class Form1 : Form
+    {
+        float  r=0;
+        int  t=0;
+        float  d=0;
+        float  a = 0;
+        float  x = 0;
+        bool y = false;
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+             y = true;
+            r = float.Parse(textBox1.Text);
+            ///t = float.Parse(textBox2.Text);
+            double  dd = 1.0 / Math.Pow(( 1 + r ), t);
+            d = float.Parse(dd.ToString());
+            textBox4.Text = d + "";
+            double xx = a/Math.Pow((1 + r), t);
+            x = float.Parse(xx.ToString());
+            textBox3.Text = x+"";
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            r = float.Parse(textBox1.Text);
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            a = float.Parse(textBox2.Text);
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+           
+                
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+            t = int.Parse(textBox5.Text);
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
